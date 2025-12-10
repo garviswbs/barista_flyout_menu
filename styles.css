@@ -1,0 +1,315 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Menu Icon - Fixed in top right corner */
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #4a3f35;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.menu-icon:hover {
+    background: #6b5d52;
+    transform: scale(1.1);
+}
+
+.hamburger {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Flyout Menu */
+.flyout-menu {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100vh;
+    background: #4a3f35;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s ease;
+    z-index: 999;
+    overflow-y: auto;
+    color: #fff;
+}
+
+.flyout-menu.active {
+    right: 0;
+}
+
+.flyout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #3a2f25;
+    border-bottom: 2px solid #6b5d52;
+}
+
+.flyout-header h2 {
+    color: #d4a574;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 36px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #d4a574;
+    transform: rotate(90deg);
+}
+
+/* Menu List */
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    border-bottom: 1px solid #6b5d52;
+}
+
+.parent-link {
+    display: block;
+    padding: 18px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: #4a3f35;
+}
+
+.parent-link:hover {
+    background: #6b5d52;
+    color: #d4a574;
+    padding-left: 30px;
+}
+
+.submenu {
+    list-style: none;
+    background: #3a2f25;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.menu-item:hover .submenu {
+    max-height: 200px;
+}
+
+.submenu li {
+    border-top: 1px solid #6b5d52;
+}
+
+.submenu li:first-child {
+    border-top: none;
+}
+
+.child-link {
+    display: block;
+    padding: 12px 20px 12px 40px;
+    color: #d4a574;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.child-link:hover {
+    background: #4a3f35;
+    padding-left: 50px;
+    color: #fff;
+}
+
+/* Content Area */
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    flex: 1;
+    min-width: 150px;
+    padding: 15px 20px;
+    background: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4a3f35;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: #e8e8e8;
+    border-color: #d4a574;
+}
+
+.tab-btn.active {
+    background: #4a3f35;
+    color: #fff;
+    border-color: #4a3f35;
+    box-shadow: 0 4px 10px rgba(74, 63, 53, 0.3);
+}
+
+/* Page Content */
+.page-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+}
+
+.child-page {
+    display: none;
+    animation: slideIn 0.4s ease;
+}
+
+.child-page.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.child-page h1 {
+    color: #4a3f35;
+    font-size: 32px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #d4a574;
+    padding-bottom: 15px;
+}
+
+.child-page p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .flyout-menu {
+        width: 100%;
+        right: -100%;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        min-width: 100%;
+    }
+
+    .page-content {
+        padding: 20px;
+    }
+
+    .child-page h1 {
+        font-size: 24px;
+    }
+
+    .child-page p {
+        font-size: 16px;
+    }
+}
+
+/* Overlay for mobile */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.overlay.active {
+    display: block;
+}
