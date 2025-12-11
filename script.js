@@ -144,7 +144,10 @@ tabButtons.forEach(button => {
 
 // Close menu when clicking outside (optional enhancement)
 document.addEventListener('click', (e) => {
-    if (!flyoutMenu.contains(e.target) && !menuIcon.contains(e.target) && flyoutMenu.classList.contains('active')) {
+    // Only check if menu is active to avoid unnecessary processing
+    if (flyoutMenu.classList.contains('active') && 
+        !flyoutMenu.contains(e.target) && 
+        !menuIcon.contains(e.target)) {
         closeMenu();
     }
 });
