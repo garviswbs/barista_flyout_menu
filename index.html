@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barista Flyout Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menu Icon - Fixed in top right -->
+    <button class="menu-icon" id="menuIcon">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+    </button>
+
+    <!-- Flyout Menu -->
+    <nav class="flyout-menu" id="flyoutMenu">
+        <div class="flyout-header">
+            <h2>Menu</h2>
+            <button class="close-btn" id="closeBtn">&times;</button>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a href="#" class="parent-link" data-page="espresso">Espresso</a>
+                <ul class="submenu">
+                    <li><a href="#" class="child-link" data-parent="espresso" data-child="single">Single Shot</a></li>
+                    <li><a href="#" class="child-link" data-parent="espresso" data-child="double">Double Shot</a></li>
+                    <li><a href="#" class="child-link" data-parent="espresso" data-child="ristretto">Ristretto</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="parent-link" data-page="latte">Latte</a>
+                <ul class="submenu">
+                    <li><a href="#" class="child-link" data-parent="latte" data-child="classic">Classic Latte</a></li>
+                    <li><a href="#" class="child-link" data-parent="latte" data-child="vanilla">Vanilla Latte</a></li>
+                    <li><a href="#" class="child-link" data-parent="latte" data-child="caramel">Caramel Latte</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="parent-link" data-page="cappuccino">Cappuccino</a>
+                <ul class="submenu">
+                    <li><a href="#" class="child-link" data-parent="cappuccino" data-child="traditional">Traditional</a></li>
+                    <li><a href="#" class="child-link" data-parent="cappuccino" data-child="dry">Dry Cappuccino</a></li>
+                    <li><a href="#" class="child-link" data-parent="cappuccino" data-child="wet">Wet Cappuccino</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="parent-link" data-page="americano">Americano</a>
+                <ul class="submenu">
+                    <li><a href="#" class="child-link" data-parent="americano" data-child="hot">Hot Americano</a></li>
+                    <li><a href="#" class="child-link" data-parent="americano" data-child="iced">Iced Americano</a></li>
+                    <li><a href="#" class="child-link" data-parent="americano" data-child="long">Long Black</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="parent-link" data-page="mocha">Mocha</a>
+                <ul class="submenu">
+                    <li><a href="#" class="child-link" data-parent="mocha" data-child="dark">Dark Mocha</a></li>
+                    <li><a href="#" class="child-link" data-parent="mocha" data-child="white">White Mocha</a></li>
+                    <li><a href="#" class="child-link" data-parent="mocha" data-child="peppermint">Peppermint Mocha</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="content" id="content">
+        <!-- Espresso Page -->
+        <div class="page" id="espresso-page" data-page="espresso">
+            <div class="tabs">
+                <button class="tab-btn active" data-parent="espresso" data-child="single">Single Shot</button>
+                <button class="tab-btn" data-parent="espresso" data-child="double">Double Shot</button>
+                <button class="tab-btn" data-parent="espresso" data-child="ristretto">Ristretto</button>
+            </div>
+            <div class="page-content">
+                <div class="child-page active" id="espresso-single">
+                    <h1>Single Shot Espresso</h1>
+                    <p>A single shot of espresso is approximately 1 oz (30 ml) of pure coffee perfection. The foundation of many coffee drinks.</p>
+                </div>
+                <div class="child-page" id="espresso-double">
+                    <h1>Double Shot Espresso</h1>
+                    <p>A double shot of espresso delivers 2 oz (60 ml) of rich, concentrated coffee. Perfect for those who need an extra kick.</p>
+                </div>
+                <div class="child-page" id="espresso-ristretto">
+                    <h1>Ristretto</h1>
+                    <p>A ristretto is a "restricted" shot of espresso, using the same amount of coffee but half the water, resulting in a sweeter, more concentrated flavor.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latte Page -->
+        <div class="page" id="latte-page" data-page="latte">
+            <div class="tabs">
+                <button class="tab-btn active" data-parent="latte" data-child="classic">Classic Latte</button>
+                <button class="tab-btn" data-parent="latte" data-child="vanilla">Vanilla Latte</button>
+                <button class="tab-btn" data-parent="latte" data-child="caramel">Caramel Latte</button>
+            </div>
+            <div class="page-content">
+                <div class="child-page active" id="latte-classic">
+                    <h1>Classic Latte</h1>
+                    <p>A classic latte combines espresso with steamed milk and a light layer of foam. Smooth, creamy, and perfectly balanced.</p>
+                </div>
+                <div class="child-page" id="latte-vanilla">
+                    <h1>Vanilla Latte</h1>
+                    <p>Our vanilla latte adds a touch of sweet vanilla syrup to the classic recipe, creating a comforting and aromatic experience.</p>
+                </div>
+                <div class="child-page" id="latte-caramel">
+                    <h1>Caramel Latte</h1>
+                    <p>Rich caramel syrup meets espresso and steamed milk, topped with caramel drizzle for an indulgent treat.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cappuccino Page -->
+        <div class="page" id="cappuccino-page" data-page="cappuccino">
+            <div class="tabs">
+                <button class="tab-btn active" data-parent="cappuccino" data-child="traditional">Traditional</button>
+                <button class="tab-btn" data-parent="cappuccino" data-child="dry">Dry Cappuccino</button>
+                <button class="tab-btn" data-parent="cappuccino" data-child="wet">Wet Cappuccino</button>
+            </div>
+            <div class="page-content">
+                <div class="child-page active" id="cappuccino-traditional">
+                    <h1>Traditional Cappuccino</h1>
+                    <p>Equal parts espresso, steamed milk, and milk foam create the perfect cappuccino. A true Italian classic.</p>
+                </div>
+                <div class="child-page" id="cappuccino-dry">
+                    <h1>Dry Cappuccino</h1>
+                    <p>A dry cappuccino features more foam and less steamed milk, resulting in a lighter, airier drink with a stronger coffee flavor.</p>
+                </div>
+                <div class="child-page" id="cappuccino-wet">
+                    <h1>Wet Cappuccino</h1>
+                    <p>A wet cappuccino has more steamed milk and less foam, creating a creamier texture similar to a latte.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Americano Page -->
+        <div class="page" id="americano-page" data-page="americano">
+            <div class="tabs">
+                <button class="tab-btn active" data-parent="americano" data-child="hot">Hot Americano</button>
+                <button class="tab-btn" data-parent="americano" data-child="iced">Iced Americano</button>
+                <button class="tab-btn" data-parent="americano" data-child="long">Long Black</button>
+            </div>
+            <div class="page-content">
+                <div class="child-page active" id="americano-hot">
+                    <h1>Hot Americano</h1>
+                    <p>Espresso shots topped with hot water, creating a coffee similar in strength to drip coffee but with a different flavor profile.</p>
+                </div>
+                <div class="child-page" id="americano-iced">
+                    <h1>Iced Americano</h1>
+                    <p>Espresso shots poured over ice and topped with cold water. Refreshing and bold, perfect for warm days.</p>
+                </div>
+                <div class="child-page" id="americano-long">
+                    <h1>Long Black</h1>
+                    <p>Hot water poured first, then espresso shots on top. This method preserves the crema and delivers a stronger flavor.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mocha Page -->
+        <div class="page" id="mocha-page" data-page="mocha">
+            <div class="tabs">
+                <button class="tab-btn active" data-parent="mocha" data-child="dark">Dark Mocha</button>
+                <button class="tab-btn" data-parent="mocha" data-child="white">White Mocha</button>
+                <button class="tab-btn" data-parent="mocha" data-child="peppermint">Peppermint Mocha</button>
+            </div>
+            <div class="page-content">
+                <div class="child-page active" id="mocha-dark">
+                    <h1>Dark Mocha</h1>
+                    <p>Rich dark chocolate combined with espresso and steamed milk, topped with whipped cream. A chocolate lover's dream.</p>
+                </div>
+                <div class="child-page" id="mocha-white">
+                    <h1>White Mocha</h1>
+                    <p>Sweet white chocolate sauce blended with espresso and steamed milk, finished with whipped cream.</p>
+                </div>
+                <div class="child-page" id="mocha-peppermint">
+                    <h1>Peppermint Mocha</h1>
+                    <p>A festive favorite combining chocolate, peppermint syrup, espresso, and steamed milk, topped with whipped cream and crushed peppermint.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
